@@ -19,6 +19,26 @@ body {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
+/* ── Global word & letter spacing fixes ────────────────────────────────── */
+
+/* Bebas Neue display headings — add breathing room between letters */
+.font-display {
+  letter-spacing: 0.04em;
+  word-spacing: 0.12em;
+}
+
+/* Body copy — slightly more readable line spacing */
+.font-body {
+  letter-spacing: 0.01em;
+  word-spacing: 0.06em;
+}
+
+/* Mono labels — tighten just a touch so they feel precise */
+.font-mono {
+  letter-spacing: 0.08em;
+  word-spacing: 0.06em;
+}
+
 .font-syne {
   font-family: var(--font-syne);
 }

@@ -30,7 +30,21 @@ module.exports = {
         display: ["'Bebas Neue'", "'Space Grotesk'", "sans-serif"],
         body: ["'Inter'", "sans-serif"],
         mono: ["'JetBrains Mono'", "monospace"],
-      }
+      },
+      keyframes: {
+        "marquee-left": {
+          "0%":   { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        "marquee-right": {
+          "0%":   { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+      },
+      animation: {
+        "marquee-left":  "marquee-left 30s linear infinite",
+        "marquee-right": "marquee-right 30s linear infinite",
+      },
     },
   },
   plugins: [],

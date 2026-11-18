@@ -75,7 +75,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           
           {/* Left Column: Reserved Spacer for Stage 1 Portrait Card Landing (Desktop Only) */}
-          <div className="hidden lg:block lg:col-span-5 h-[490px] w-full" />
+          <div className="about-spacer hidden lg:flex lg:col-span-5 h-[490px] w-full items-center justify-center" />
 
           {/* Mobile Only: Inline Portrait Image Card */}
           <div className="block lg:hidden w-full flex justify-center mb-6">
@@ -203,7 +203,7 @@ export default function About() {
           </div>
 
           {/* Right Column: Reserved Spacer for Stage 2 Portrait Card Landing (Desktop Only) */}
-          <div className="hidden lg:block lg:col-span-5 h-[490px] w-full" />
+          <div className="services-spacer hidden lg:flex lg:col-span-5 h-[490px] w-full items-center justify-center" />
 
         </div>
 
