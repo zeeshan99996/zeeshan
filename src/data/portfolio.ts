@@ -46,11 +46,18 @@ export const PORTFOLIO_DATA = {
     bio: "I'm Zeeshan, a full-stack developer crafting high-performance modern websites, web applications, SaaS platforms, and e-commerce stores that combine rock-solid engineering with thoughtful design.",
     avatar: "/images/hero-portrait.jpg",
     email: "muhammadzeeshan0477@gmail.com",
+    phone: "+92 311 6353044",
+    phoneRaw: "+923116353044",
+    whatsapp: "https://wa.me/923116353044",
     location: "Global / Remote",
     socials: {
+      linkedin: "https://www.linkedin.com/in/muhammad-zeeshan-ai-dev/",
       github: "https://github.com/zeeshan99996",
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
+      threads: "https://www.threads.com/@muhammadzeeshan0477",
+      tiktok: "https://www.tiktok.com/@aiwithzeeshan2?_r=1&_t=ZS-9BVXSgClmqo",
+      instagram: "https://www.instagram.com/muhammadzeeshan0477?hvrq=MW92a3plMWplZHhs",
+      facebook: "https://www.facebook.com/share/1TBWLgQM8t/",
+      whatsapp: "https://wa.me/923116353044",
       email: "mailto:muhammadzeeshan0477@gmail.com"
     }
   },

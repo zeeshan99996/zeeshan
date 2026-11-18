@@ -109,11 +109,20 @@ export default function Navbar() {
               </a>
             </div>
 
-            <div className="flex flex-col gap-4 font-mono text-xs text-graphite-400 pt-6">
-              <p>{PORTFOLIO_DATA.personal.location}</p>
-              <a href={`mailto:${PORTFOLIO_DATA.personal.email}`} className="text-white hover:text-[#CCFF00] underline">
+            <div className="flex flex-col gap-3 font-mono text-xs text-graphite-400 pt-6 border-t border-white/10">
+              <a
+                href={`tel:${PORTFOLIO_DATA.personal.phoneRaw}`}
+                className="text-white hover:text-[#CCFF00] font-bold text-sm"
+              >
+                {PORTFOLIO_DATA.personal.phone}
+              </a>
+              <a
+                href={`mailto:${PORTFOLIO_DATA.personal.email}`}
+                className="text-white hover:text-[#CCFF00] underline"
+              >
                 {PORTFOLIO_DATA.personal.email}
               </a>
+              <p className="text-graphite-500">{PORTFOLIO_DATA.personal.location}</p>
             </div>
           </motion.div>
         )}
