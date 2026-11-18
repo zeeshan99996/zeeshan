@@ -45,13 +45,13 @@ export const PORTFOLIO_DATA = {
     role: "Full-Stack Developer & Digital Creative",
     bio: "I'm Zeeshan, a full-stack developer crafting high-performance modern websites, web applications, SaaS platforms, and e-commerce stores that combine rock-solid engineering with thoughtful design.",
     avatar: "/images/hero-portrait.jpg",
-    email: "contact@zeeshan.dev",
+    email: "muhammadzeeshan0477@gmail.com",
     location: "Global / Remote",
     socials: {
-      github: "https://github.com",
+      github: "https://github.com/zeeshan99996",
       linkedin: "https://linkedin.com",
       twitter: "https://twitter.com",
-      email: "mailto:contact@zeeshan.dev"
+      email: "mailto:muhammadzeeshan0477@gmail.com"
     }
   },
   stats: [
