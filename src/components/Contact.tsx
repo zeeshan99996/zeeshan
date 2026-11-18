@@ -42,8 +42,8 @@ export default function Contact() {
   const [formState, setFormState] = useState({
     name: "",
     email: "",
-    projectType: "Full-Stack Web App",
-    budget: "$5k - $10k",
+    projectType: "Website Development",
+    budget: "$3k - $7k",
     message: "",
   });
 
@@ -101,8 +101,8 @@ export default function Contact() {
           setFormState({
             name: "",
             email: "",
-            projectType: "Full-Stack Web App",
-            budget: "$5k - $10k",
+            projectType: "Website Development",
+            budget: "$3k - $7k",
             message: "",
           });
         }, 7000);
@@ -174,33 +174,30 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-28 px-4 md:px-12 bg-[#1A1A1E] text-white border-t border-white/10 overflow-hidden"
+      className="relative py-24 sm:py-28 px-4 md:px-12 bg-[#1A1A1E] text-white border-t border-white/10 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
           {/* Left Column: Contact Editorial, Phone, Email & Socials */}
-          <div className="lg:col-span-5 space-y-8">
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-4">
+            {/* Header */}
             <div>
-              <div className="flex items-center gap-2 font-mono text-xs text-[#CCFF00] mb-4">
+              <div className="flex items-center gap-2 font-mono text-xs text-[#CCFF00] mb-3">
                 <Mail className="h-4 w-4" />
                 <span className="tracking-widest uppercase">
                   {"// 07. INITIATE COLLABORATION"}
                 </span>
               </div>
-              <h2 className="font-display text-6xl sm:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none text-white">
+              <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl font-black tracking-tighter uppercase leading-none text-white">
                 LET&apos;S BUILD<br />
                 <span className="text-[#CCFF00]">TOGETHER.</span>
               </h2>
             </div>
 
-            <p className="font-body text-base sm:text-lg text-graphite-400 font-light leading-relaxed">
-              Have an upcoming product idea, website requirement, autonomous AI agent workflow, or full-stack software system? Reach out via form, direct phone call, WhatsApp, or email.
-            </p>
-
             {/* Direct Contact Cards (Phone & Email) */}
-            <div className="space-y-4">
+            <div className="space-y-3.5 pt-1">
               {/* Phone & WhatsApp Card */}
-              <div className="p-5 rounded-2xl bg-[#141416] border border-white/10 space-y-3 shadow-xl">
+              <div className="p-4 sm:p-5 rounded-2xl bg-[#141416] border border-white/10 space-y-2.5 shadow-xl">
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-xs text-graphite-400 uppercase tracking-widest flex items-center gap-1.5">
                     <Phone className="h-3.5 w-3.5 text-[#CCFF00]" />
@@ -223,7 +220,6 @@ export default function Contact() {
                   </a>
 
                   <div className="flex items-center gap-2 shrink-0">
-                    {/* Copy Phone */}
                     <button
                       onClick={copyPhoneToClipboard}
                       type="button"
@@ -237,7 +233,6 @@ export default function Contact() {
                       <span>{copiedPhone ? "COPIED" : "COPY"}</span>
                     </button>
 
-                    {/* Direct WhatsApp Chat */}
                     <a
                       href={PORTFOLIO_DATA.personal.whatsapp}
                       target="_blank"
@@ -252,7 +247,7 @@ export default function Contact() {
               </div>
 
               {/* Direct Gmail Card */}
-              <div className="p-5 rounded-2xl bg-[#141416] border border-white/10 space-y-3 shadow-xl">
+              <div className="p-4 sm:p-5 rounded-2xl bg-[#141416] border border-white/10 space-y-2.5 shadow-xl">
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-xs text-graphite-400 uppercase tracking-widest flex items-center gap-1.5">
                     <Mail className="h-3.5 w-3.5 text-[#CCFF00]" />
@@ -298,20 +293,20 @@ export default function Contact() {
             </div>
 
             {/* Official Social Media Network */}
-            <div className="p-5 rounded-2xl bg-[#141416] border border-white/10 space-y-3 shadow-xl">
+            <div className="p-4 sm:p-5 rounded-2xl bg-[#141416] border border-white/10 space-y-3 shadow-xl">
               <span className="font-mono text-xs text-graphite-400 uppercase tracking-widest flex items-center gap-1.5">
                 <Share2 className="h-3.5 w-3.5 text-[#CCFF00]" />
                 CONNECT ON SOCIAL MEDIA
               </span>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-1">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-1">
                 {socialsList.map((soc) => (
                   <a
                     key={soc.name}
                     href={soc.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex items-center gap-2 px-3 py-2.5 rounded-xl bg-neutral-900 border border-white/5 font-mono text-xs text-graphite-300 transition-all duration-300 group/soc ${soc.color}`}
+                    className={`flex items-center gap-2 px-3 py-2 rounded-xl bg-neutral-900 border border-white/5 font-mono text-xs text-graphite-300 transition-all duration-300 group/soc ${soc.color}`}
                   >
                     <span className="shrink-0">{soc.icon}</span>
                     <span className="truncate font-semibold">{soc.name}</span>
@@ -322,10 +317,10 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Right Column: Active Interactive Contact Form */}
-          <div className="lg:col-span-7 p-8 sm:p-10 rounded-3xl bg-[#141416] border border-white/10 shadow-2xl relative">
+          {/* Right Column: Active Interactive Contact Form (Balanced & Sized to Match Left Height) */}
+          <div className="lg:col-span-7 p-6 sm:p-8 lg:p-10 rounded-3xl bg-[#141416] border border-white/10 shadow-2xl relative flex flex-col justify-between h-full">
             {submitted ? (
-              <div className="py-16 text-center space-y-4">
+              <div className="my-auto py-16 text-center space-y-4">
                 <div className="h-16 w-16 rounded-full bg-[#CCFF00]/20 text-[#CCFF00] flex items-center justify-center mx-auto border border-[#CCFF00]">
                   <CheckCircle2 className="h-8 w-8" />
                 </div>
@@ -346,7 +341,18 @@ export default function Contact() {
                 </div>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-5 flex-1 flex flex-col justify-between">
+                {/* Form Top Header Pill */}
+                <div className="flex items-center justify-between border-b border-white/10 pb-3.5">
+                  <span className="font-mono text-xs text-graphite-300 uppercase tracking-widest flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-[#CCFF00]" />
+                    SEND PROJECT INQUIRY
+                  </span>
+                  <span className="font-mono text-[11px] text-[#CCFF00]">
+                    RESPONSE TIME &lt; 24H
+                  </span>
+                </div>
+
                 {errorMessage && (
                   <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-start gap-3 text-rose-300 font-mono text-xs">
                     <AlertCircle className="h-4 w-4 shrink-0 mt-0.5 text-rose-400" />
@@ -364,8 +370,8 @@ export default function Contact() {
                   </div>
                 )}
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                  <div className="space-y-1.5">
                     <label className="font-mono text-xs text-graphite-400 uppercase">
                       YOUR NAME *
                     </label>
@@ -378,10 +384,10 @@ export default function Contact() {
                       onChange={(e) =>
                         setFormState({ ...formState, name: e.target.value })
                       }
-                      className="w-full bg-[#1A1A1E] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-graphite-500 focus:outline-none focus:border-[#CCFF00] transition-colors"
+                      className="w-full bg-[#1A1A1E] border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder:text-graphite-500 focus:outline-none focus:border-[#CCFF00] transition-colors"
                     />
                   </div>
-                  <div className="space-y-2">
+                  <div className="space-y-1.5">
                     <label className="font-mono text-xs text-graphite-400 uppercase">
                       YOUR EMAIL *
                     </label>
@@ -394,13 +400,13 @@ export default function Contact() {
                       onChange={(e) =>
                         setFormState({ ...formState, email: e.target.value })
                       }
-                      className="w-full bg-[#1A1A1E] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-graphite-500 focus:outline-none focus:border-[#CCFF00] transition-colors"
+                      className="w-full bg-[#1A1A1E] border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder:text-graphite-500 focus:outline-none focus:border-[#CCFF00] transition-colors"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                  <div className="space-y-1.5">
                     <label className="font-mono text-xs text-graphite-400 uppercase">
                       PROJECT CATEGORY
                     </label>
@@ -413,7 +419,7 @@ export default function Contact() {
                           projectType: e.target.value,
                         })
                       }
-                      className="w-full bg-[#1A1A1E] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#CCFF00] transition-colors"
+                      className="w-full bg-[#1A1A1E] border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-[#CCFF00] transition-colors"
                     >
                       <option value="Website Development">
                         Website Development
@@ -436,7 +442,7 @@ export default function Contact() {
                     </select>
                   </div>
 
-                  <div className="space-y-2">
+                  <div className="space-y-1.5">
                     <label className="font-mono text-xs text-graphite-400 uppercase">
                       BUDGET RANGE
                     </label>
@@ -446,7 +452,7 @@ export default function Contact() {
                       onChange={(e) =>
                         setFormState({ ...formState, budget: e.target.value })
                       }
-                      className="w-full bg-[#1A1A1E] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#CCFF00] transition-colors"
+                      className="w-full bg-[#1A1A1E] border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-[#CCFF00] transition-colors"
                     >
                       <option value="< $3k">&lt; $3,000</option>
                       <option value="$3k - $7k">$3,000 — $7,000</option>
@@ -456,20 +462,20 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-1.5 flex-1">
                   <label className="font-mono text-xs text-graphite-400 uppercase">
                     PROJECT VISION &amp; REQUIREMENTS *
                   </label>
                   <textarea
                     required
                     name="message"
-                    rows={4}
+                    rows={5}
                     placeholder="Tell me about your product requirements, deadlines, design preferences, and goals..."
                     value={formState.message}
                     onChange={(e) =>
                       setFormState({ ...formState, message: e.target.value })
                     }
-                    className="w-full bg-[#1A1A1E] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-graphite-500 focus:outline-none focus:border-[#CCFF00] transition-colors resize-none"
+                    className="w-full bg-[#1A1A1E] border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder:text-graphite-500 focus:outline-none focus:border-[#CCFF00] transition-colors resize-none min-h-[120px]"
                   />
                 </div>
 
@@ -477,7 +483,7 @@ export default function Contact() {
                   type="submit"
                   disabled={isSubmitting}
                   data-cursor="SUBMIT"
-                  className="w-full py-4 rounded-xl bg-[#CCFF00] text-black font-mono text-xs font-extrabold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-white transition-all shadow-lg hover:shadow-lime-accent/30 disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full py-4 rounded-xl bg-[#CCFF00] text-black font-mono text-xs font-extrabold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-white transition-all shadow-lg hover:shadow-lime-accent/30 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
                 >
                   {isSubmitting ? (
                     <>
