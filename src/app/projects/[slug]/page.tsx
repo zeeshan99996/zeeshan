@@ -4,7 +4,7 @@ import Link from "next/link";
 import { PROJECTS } from "@/data/projects";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ArrowLeft, ExternalLink, Github, CheckCircle2, Calendar, User, Clock, Layers } from "lucide-react";
+import { ArrowLeft, ExternalLink, CheckCircle2, Calendar, User, Clock, Layers, Globe } from "lucide-react";
 
 export function generateStaticParams() {
   return PROJECTS.map((p) => ({
@@ -35,6 +35,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           <span>BACK TO ALL PROJECTS</span>
         </Link>
 
+        {/* Hero Header */}
         <div className="border-b border-white/10 pb-12 mb-12">
           <div className="flex items-center gap-3 font-mono text-xs text-graphite-400 mb-4">
             <span className="text-[#CCFF00] font-bold">{project.number}</span>
@@ -60,27 +61,50 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             <a
               href={project.demoUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               data-cursor="LIVE DEMO"
-              className="inline-flex items-center gap-2 rounded-full bg-[#CCFF00] px-6 py-3 font-mono text-xs font-bold text-black hover:bg-white transition-all shadow-lg hover:shadow-lime-accent/20"
+              className="inline-flex items-center gap-2 rounded-full bg-[#CCFF00] px-7 py-3.5 font-mono text-xs font-bold text-black hover:bg-white transition-all shadow-lg hover:shadow-lime-accent/20"
             >
-              <span>LIVE DEMO</span>
-              <ExternalLink className="h-4 w-4" />
-            </a>
-
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noreferrer"
-              data-cursor="SOURCE"
-              className="inline-flex items-center gap-2 rounded-full bg-neutral-900 border border-white/10 px-6 py-3 font-mono text-xs font-bold text-white hover:border-[#CCFF00] hover:text-[#CCFF00] transition-all"
-            >
-              <Github className="h-4 w-4" />
-              <span>SOURCE CODE</span>
+              <span>VISIT LIVE WEBSITE</span>
+              <ExternalLink className="h-4 w-4 stroke-[2.5]" />
             </a>
           </div>
         </div>
 
+        {/* Full-Width Project Screenshot Showcase Frame */}
+        <div className="mb-16 rounded-3xl overflow-hidden bg-[#101012] border border-white/15 shadow-2xl">
+          <div className="bg-[#121214] px-4 py-3 border-b border-white/10 flex items-center justify-between gap-3">
+            <div className="flex items-center gap-1.5">
+              <span className="h-3 w-3 rounded-full bg-rose-500/80 inline-block" />
+              <span className="h-3 w-3 rounded-full bg-amber-500/80 inline-block" />
+              <span className="h-3 w-3 rounded-full bg-emerald-500/80 inline-block" />
+            </div>
+
+            <a
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-neutral-900 border border-white/10 font-mono text-xs text-graphite-300 hover:text-[#CCFF00] transition-colors truncate max-w-md"
+            >
+              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+              <Globe className="h-3.5 w-3.5 text-graphite-400 shrink-0" />
+              <span className="truncate">{project.demoUrl}</span>
+              <ExternalLink className="h-3 w-3 shrink-0" />
+            </a>
+
+            <span className="font-mono text-xs text-[#CCFF00] hidden sm:inline">LIVE PREVIEW</span>
+          </div>
+
+          <div className="relative w-full h-[280px] sm:h-[420px] md:h-[540px] lg:h-[640px] overflow-hidden bg-neutral-950">
+            <img
+              src={project.image}
+              alt={`${project.title} screenshot`}
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+        </div>
+
+        {/* Project Metadata Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-6 sm:p-8 rounded-2xl bg-neutral-900 border border-white/10 mb-16 font-mono text-xs">
           <div className="space-y-1">
             <span className="text-graphite-400 flex items-center gap-1.5">
@@ -108,6 +132,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           </div>
         </div>
 
+        {/* Challenge & Solution Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
           <div className="lg:col-span-6 space-y-4 p-8 rounded-2xl bg-neutral-900/60 border border-white/10">
             <h3 className="font-display text-2xl font-bold uppercase text-rose-400 tracking-tight">
@@ -128,6 +153,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           </div>
         </div>
 
+        {/* Key Features */}
         <div className="p-8 sm:p-12 rounded-3xl bg-neutral-900 border border-white/10 mb-16 space-y-8">
           <h3 className="font-display text-3xl sm:text-4xl font-extrabold uppercase text-white tracking-tight border-b border-white/10 pb-4">
             KEY ARCHITECTURAL FEATURES
@@ -145,6 +171,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           </div>
         </div>
 
+        {/* Next Project Footer */}
         <div className="border-t border-white/10 pt-16 flex justify-between items-center">
           <span className="font-mono text-xs text-graphite-400">UP NEXT</span>
           <Link
